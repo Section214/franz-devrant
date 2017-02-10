@@ -9,7 +9,9 @@
     "serviceURL": "https://www.devrant.io/feed",
     "serviceName": "devRant",
     "message": "",
-    "popup": [],
+    "popup": [
+        "^https:\/\/img.devrant.io/([^~])*"
+    ],
     "hasNotificationSound": false,
     "hasIndirectMessages": false,
     "hasTeamID": false,
