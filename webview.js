@@ -11,6 +11,9 @@ module.exports = (Franz, options) => {
 		$(this).attr('target', '_blank');
 	});
 	
+	// Add help link to devrant menu
+	$('.menu-option-log-out').before('<li><a class="menu-franz" href="https://github.com/section214/franz-devrant/issues" target="_blank"><span class="icon-github2 icon"></span>Franz Integration</a></li>');
+	
 	function getMessages() {
 		let unread = '';
 
