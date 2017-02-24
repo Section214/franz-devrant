@@ -5,3 +5,7 @@
 .rant-permalink:hover {
 	background-color: #c14857;
 }
+
+.rant-permalink .icon {
+	font-size: 0.75em;
+}
