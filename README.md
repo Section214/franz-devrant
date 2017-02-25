@@ -9,7 +9,7 @@ The minimum required version of Franz to run custom integrations is 4.0.0. You c
 
 - [x] Notifications
 - [x] Modal support for embedded images
-- [x] Custom back button on individual rants
+- [x] Custom back button on individual rants with autoscroll
 - [x] Custom permalink button on individual rants
 - [x] Custom about and update dialog
 
