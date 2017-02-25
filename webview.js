@@ -4,12 +4,28 @@ const ver = '1.1.4';
 module.exports = (Franz, options) => {
 	Franz.injectCSS(path.join(__dirname, 'css', 'franz.css'));
 	
+	// Trigger scroll on back button
+	$(document).ready( function() {
+		let url = window.location.href;
+		let rant = url.split('#');
+		
+		if (rant.length === 2) {
+			$('.rant-comment-row-widget').each( function() {
+				if ($(this).data('id') == rant[1]) {
+					$('html,body').animate({
+						scrollTop: $(this).offset().top
+					}, 'slow');
+				}
+			});
+		}
+	});
+	
 	// Add back button and permalink to individual rants
 	if ($('.addcomment-btn').length) {
 		let rant = $('.body-col2').data('id');
 
 		// Back button
-		$('.rantlist').append('<li class="feed-prev-more"><a class="feed-prev" onclick="window.history.back()" style="cursor: pointer"><span class="icon-back2 icon"></span><span class="feed-prev-more-link">Back</span></a><div class="clearfix"></div></li>');
+		$('.rantlist').append('<li class="feed-prev-more"><a class="feed-prev" href="' + document.referrer + '#' + rant + '"><span class="icon-back2 icon"></span><span class="feed-prev-more-link">Back</span></a><div class="clearfix"></div></li>');
 
 		// Permalink button
 		$('.share-icons').prepend('<a class="rant-permalink" href="https://www.devrant.io/rants/' + rant + '" target="_blank"><span class="icon-rantsemoticon2 icon"></span><span class="share-text">Permalink</span></a>');
@@ -24,6 +40,7 @@ module.exports = (Franz, options) => {
 		}
 	}
 	
+	// Update check
 	setTimeout( function() {
 		$.get('https://raw.githubusercontent.com/Section214/franz-devrant/master/package.json', function(data) {
 			let packagedata = $.parseJSON(data);
