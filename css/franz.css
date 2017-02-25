@@ -1,3 +1,4 @@
+/** Permalinks **/
 .rant-permalink {
     background-color: #d55161;
 }
@@ -10,6 +11,7 @@
     font-size: 0.75em;
 }
 
+/** Profile Integration **/
 .profile-franz-integration {
     background: #fff;
     padding: 15px 20px 0 20px;
@@ -35,62 +37,132 @@
     cursor: pointer;
 }
 
-.franz-integration-update-notice {
-    background: #d55161;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
+/** Adjust Title Bar Position **/
+.title-bar {
+    margin-left: calc(50% - 150px) !important;
 }
 
-.integration-download {
-    display: inline-block;
+/** Icon **/
+.franz-icon {
+    position: relative;
     float: left;
-    width: 64px;
 }
 
-.integration-title {
+.franz-icon a {
+    width: 30px;
+    height: 100%;
+    display: inline-block;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+}
+
+.franz-icon svg {
+    vertical-align: text-top;
+}
+
+.franz-icon svg .st0, .franz-icon svg .st1 {
+    fill: #fff;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+}
+
+.franz-icon:hover svg .st0, .franz-icon:hover svg .st1 {
+    fill: #c6c7d9;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+}
+
+/** About Box **/
+.franz-about-box {
+    width: calc(100% - 70px);
+    margin: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.franz-about-icon-wrap {
+    display: inline-block;
+    width: 78px;
+}
+
+.franz-about-icon {
+    width: 72px;
+    height: 72px;
+    background: #3498db;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    box-shadow: 0px 2px 4px 0px #ccc;
+    -webkit-box-shadow: 0px 2px 4px 0px #ccc;
+}
+
+.franz-about-icon svg {
+    width: 56px;
+    height: 56px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.franz-about-icon svg .st0, .franz-about-icon svg .st1 {
+    fill: #fff;
+}
+
+.franz-about-info {
+    width: calc(100% - 96px);
     display: inline-block;
     float: right;
-    width: calc(100% - 77px);
-    margin-right: 5px;
+    vertical-align: top;
 }
 
-.integration-latest {
-    display: block;
+.franz-about-info a,
+.franz-about-details a {
+    color: #8dc6a6;
+    border-color: #8dc6a6;
+}
+
+.franz-about-info a:hover,
+.franz-about-details a:hover {
+    color: #62b38d;
+    border-color: #62b38d;
+}
+
+.franz-about-title {
+    font-family: Comfortaa;
     font-weight: bold;
+    font-size: 20px;
 }
 
-.integration-download-icon .icon {
-    font-size: 32px;
+.franz-about-version span {
+    font-weight: bold;
+    font-size: 12px;
 }
 
-.integration-download a {
-    display: block;
+.franz-about-version a {
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.franz-about-update {
+    padding: 10px 0;
+}
+
+.franz-about-update a {
+    font-size: 10px;
     border: 2px solid;
     border-radius: 5px;
-    margin-left: 5px;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
+    padding: 2px 4px;
 }
 
-.integration-download a:hover {
-    background: #fff;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
+.franz-about-details p {
+    font-size: 12px;
 }
 
-.integration-download a:hover .integration-latest {
-    color: #d55161;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
-}
-
-.integration-download a:hover .icon {
-    color: #404158;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
-}
-
-.integration-installed {
-    font-weight: bold;
+.franz-about-footer {
+    background: #aaaab7;
+    color: #fff;
+    margin: 0 -10px -10px -10px;
+    padding: 10px 10px;
+    border-radius: 0 0 10px 10px;
+    font-size: 10px;
+    text-align: center;
 }
