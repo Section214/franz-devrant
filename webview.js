@@ -24,7 +24,7 @@ module.exports = (Franz, options) => {
 	
 	if (! $('.profile-bar').length) {
 		// About box
-		$('.rantlist').after('<div class="franz-about-box" style="display: none"><div class="franz-about-icon-wrap"><div class="franz-about-icon">' + franzicon + '</div></div><div class="franz-about-info"><div class="franz-about-title">devRant Franz Integration</div><div class="franz-about-version"><span>Version ' + ver + '</span><a href="https://raw.githubusercontent.com/Section214/franz-devrant/master/CHANGELOG.md" target="_blank">What\'s New</a></div><div class="franz-about-update"><a href="#">Check for Update</a></div></div><div class="clearfix"></div><div class="franz-about-details"><p>The devRant integration for Franz is designed by <a href="https://section214.com" target="_blank">Section214</a> and is released under the MIT license.</p><p>Want to help? <a href="https://section214.com/donate/" target="_blank">Make a donation</a> or <a href="https://github.com/Section214/franz-devrant/issues" target="_blank">get involved</a>!</p></div><div class="franz-about-footer">Franz and the Franz logo are copyright Stefan Malzner.<br />This plugin is not affiliated with or endorced by Franz in any way.</div></div>');
+		$('.rantlist').after('<div class="franz-about-box" style="display: none"><div class="franz-about-icon-wrap"><div class="franz-about-icon">' + franzicon + '</div></div><div class="franz-about-info"><div class="franz-about-title">devRant Franz Integration</div><div class="franz-about-version"><span>Version ' + ver + '</span><a href="https://raw.githubusercontent.com/Section214/franz-devrant/master/CHANGELOG.md" target="_blank">What\'s New</a></div><div class="franz-about-update"><a href="#">Check for update</a></div></div><div class="clearfix"></div><div class="franz-about-details"><p>The devRant integration for Franz is designed by <a href="https://section214.com" target="_blank">Section214</a> and is released under the MIT license.</p><p>Questions? Comments? <a href="https://github.com/Section214/franz-devrant/issues" target="_blank">Let us know</a>!</p><p>Want to help? <a href="https://section214.com/donate/" target="_blank">Make a donation</a> or <a href="https://github.com/Section214/franz-devrant/issues" target="_blank">get involved</a>!</p></div><div class="franz-about-footer">Franz and the Franz logo are copyright Stefan Malzner.<br />This plugin is not affiliated with or endorced by Franz in any way.</div></div>');
 
 		// Menu icon
 		$('.menu-icon').after('<div class="franz-icon"><a href="#" title="Franz Integration">' + franzicon + '</a></div>');
@@ -51,6 +51,10 @@ module.exports = (Franz, options) => {
 			} else {
 				$('.franz-about-box').fadeOut('fast', function () {
 					$(this).css('display', 'none');
+					
+					$('.franz-about-update').removeClass('franz-outdated');
+					$('.franz-about-update').html('<a href="#">Check for update</a>');
+					
 					$('.rantlist').fadeIn('fast').css('display', 'block');
 					
 					if ($('.addrant-btn').length) {
@@ -59,6 +63,25 @@ module.exports = (Franz, options) => {
 					
 					if ($('.addcomment-btn').length) {
 						$('.addcomment-btn').fadeIn('fast').css('display', 'block');
+					}
+				});
+			}
+		});
+		
+		$('.franz-about-update a').click( function(e) {
+			if ($(this).attr('href') === '#') {
+				e.preventDefault();
+
+				$.get('https://raw.githubusercontent.com/Section214/franz-devrant/master/package.json', function(data) {
+					let packagedata = $.parseJSON(data);
+					
+					if (ver < packagedata.version) {
+						$('.franz-about-update').addClass('franz-outdated');
+						$('.franz-about-update a').text('Version ' + packagedata.version + ' is available!');
+						$('.franz-about-update a').attr('href', 'https://github.com/Section214/franz-devrant/releases/latest');
+						$('.franz-about-update a').attr('target', '_blank');
+					} else {
+						$('.franz-about-update').html('<span>The devRant Franz integration is up to date!</span>');
 					}
 				});
 			}
@@ -84,17 +107,6 @@ module.exports = (Franz, options) => {
 			$('.profile-avatar-container').after('<div class="profile-franz-integration"><a href="https://github.com/Section214/franz-devrant/issues" target="_blank">Hey there! If you\'re seeing this, you\'re using my devRant integration plugin for Franz. Congratulations! If you have questions about this plugin, or have an idea for a new integration, click here and let me know!</a></div>');
 		}
 	}
-	
-	// Update check
-	setTimeout( function() {
-		$.get('https://raw.githubusercontent.com/Section214/franz-devrant/master/package.json', function(data) {
-			let packagedata = $.parseJSON(data);
-			
-			if (ver !== packagedata.version) {
-				$('.rant-top-bar').after('<div class="franz-integration-update-notice"><span class="integration-download"><a href="https://github.com/Section214/franz-devrant/releases/latest" title="Download Latest" target="_blank"><span class="integration-download-icon"><span class="icon-github2 icon"></span><span class="integration-latest">' + packagedata.version + '</span></span></a></span><span class="integration-title">Oh no! It looks like your Franz plugin is out of date!<br />&larr; Click this link to download the latest version!<br /><span class="integration-installed">Installed version: ' + ver + '</span></span><div class="clearfix"></div></div>');
-			}
-		});
-	}, 3600);
 	
 	// Add target attribute to app buttons so they open in browser
 	$('.app-btns-container a').each( function() {

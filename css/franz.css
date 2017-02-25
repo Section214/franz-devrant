@@ -153,6 +153,21 @@
     padding: 2px 4px;
 }
 
+.franz-about-update span {
+    font-size: 12px;
+    color: #aaaab7;
+}
+
+.franz-outdated a {
+    color: #d55161;
+    border-color: #d55161;
+}
+
+.franz-outdated a:hover {
+    color: #c14857;
+    border-color: #c14857;
+}
+
 .franz-about-details p {
     font-size: 12px;
 }
