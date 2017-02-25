@@ -1,36 +1,96 @@
 .rant-permalink {
-	background-color: #d55161;
+    background-color: #d55161;
 }
 
 .rant-permalink:hover {
-	background-color: #c14857;
+    background-color: #c14857;
 }
 
 .rant-permalink .icon {
-	font-size: 0.75em;
+    font-size: 0.75em;
 }
 
 .profile-franz-integration {
-	background: #fff;
-	padding: 15px 20px 0 20px;
+    background: #fff;
+    padding: 15px 20px 0 20px;
 }
 
 .profile-franz-integration a {
-	color: #aaaab8;
-	font-size: 12px;
-	padding: 2px 4px;
-	border: 2px solid #e3e3e3;
-	border-radius: 5px;
-	font-weight: bold;
-	background-color: #fff;
-	text-align: justify;
-	display: inline-block;
+    color: #aaaab8;
+    font-size: 12px;
+    padding: 2px 4px;
+    border: 2px solid #e3e3e3;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #fff;
+    text-align: justify;
+    display: inline-block;
 }
 
 .profile-franz-integration a:hover {
-	color: #d55161;
-	border-color: #d55161;
-	-webkit-transition: all .15s ease-in-out;
-	transition: all .15s ease-in-out;
-	cursor: pointer;
+    color: #d55161;
+    border-color: #d55161;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+}
+
+.franz-integration-update-notice {
+    background: #d55161;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.integration-download {
+    display: inline-block;
+    float: left;
+    width: 64px;
+}
+
+.integration-title {
+    display: inline-block;
+    float: right;
+    width: calc(100% - 77px);
+    margin-right: 5px;
+}
+
+.integration-latest {
+    display: block;
+    font-weight: bold;
+}
+
+.integration-download-icon .icon {
+    font-size: 32px;
+}
+
+.integration-download a {
+    display: block;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-left: 5px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.integration-download a:hover {
+    background: #fff;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.integration-download a:hover .integration-latest {
+    color: #d55161;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.integration-download a:hover .icon {
+    color: #404158;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.integration-installed {
+    font-weight: bold;
 }
