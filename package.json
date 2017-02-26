@@ -9,9 +9,7 @@
     "serviceURL": "https://www.devrant.io/feed",
     "serviceName": "devRant",
     "message": "",
-    "popup": [
-        "^https:\/\/img.devrant.io/([^~])*"
-    ],
+    "popup": [],
     "hasNotificationSound": false,
     "hasIndirectMessages": false,
     "hasTeamID": false,
@@ -20,6 +18,6 @@
     "webviewOptions": {
       "disablewebsecurity": ""
     },
-    "openDevTools": false
+    "openDevTools": true
   }
 }
