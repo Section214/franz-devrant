@@ -13,7 +13,9 @@ The minimum required version of Franz to run custom integrations is 4.0.0. You c
 - [x] Custom permalink button on individual rants
 - [x] Custom about and update dialog
 
-![screenshot](https://cloud.githubusercontent.com/assets/36433/23318991/611ced8a-fa9a-11e6-890c-9dcf95595332.png)
+About Screen | Single Rant Feed
+------------ | -------------
+![franz-about](https://cloud.githubusercontent.com/assets/36433/23338338/d185a0d8-fbcd-11e6-8623-a63bf05f35f2.png) | ![franz-feed](https://cloud.githubusercontent.com/assets/36433/23338339/d1a13906-fbcd-11e6-956a-8d6b1e2e15a1.png)
 
 ## Installation
 
