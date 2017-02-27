@@ -169,30 +169,32 @@ aboutScripts.init();
  * @return      {void}
  */
 function toggleAboutDialog() {
+	let button;
+	
+	if ($('.addrant-btn').length) {
+		button = $('.addrant-btn');
+	} else if ($('.addcomment-btn')) {
+		button = $('.addcomment-btn');
+	}
+	
 	if (! $('.franz-about-box').length) {
 		aboutScripts.renderDialog();
 	}
 	
 	if ($('.rantlist').css('display') != 'none') {
+		// Hide relevant button
+		$(button).fadeOut('fast', function () {
+			$(this).css('display', 'none');
+		});
+
+		// Hide rant list
 		$('.rantlist').fadeOut('fast', function () {
-			// Hide the rant list
 			$(this).css('display', 'none');
 			
-			// Hide the add rant button
-			if ($('.addrant-btn').length) {
-				$('.addrant-btn').fadeOut('fast', function () {
-					$('.franz-about-box').fadeIn('fast').css('display', 'block');
-					updateCheck();
-				});
-			}
+			// Display about box
+			$('.franz-about-box').fadeIn('fast').css('display', 'block');
 
-			// Hide the add comment button
-			if ($('.addcomment-btn').length) {
-				$('.addcomment-btn').fadeOut('fast', function () {
-					$('.franz-about-box').fadeIn('fast').css('display', 'block');
-					updateCheck();
-				});
-			}
+			updateCheck();
 		});
 	} else {
 		$('.franz-about-box').fadeOut('fast', function () {
@@ -203,15 +205,8 @@ function toggleAboutDialog() {
 			// Display the rant list
 			$('.rantlist').fadeIn('fast').css('display', 'block');
 
-			// Show the add rant button
-			if ($('.addrant-btn').length) {
-				$('.addrant-btn').fadeIn('fast').css('display', 'block');
-			}
-
-			// Show the add comment button
-			if ($('.addcomment-btn').length) {
-				$('.addcomment-btn').fadeIn('fast').css('display', 'block');
-			}
+			// Display relevant button
+			$(button).fadeIn('fast').css('display', 'block');
 		});
 	}
 }
