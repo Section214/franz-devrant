@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0, February 27, 2017
+
+* Added: Error handling for update checks
+* Added: Initial cookie handlers to allow custom settings
+* Fixed: Incorrect changelog link
+* Improved: Refactored and optimized codebase
+* Improved: Update check now runs automatically when about page is viewed
+
 ## 1.2.0, February 25, 2017
 
 * Added: Made back button scroll to last read rant automatically
