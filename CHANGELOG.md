@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1, February 28, 2017
+
+* Added: Dynamic update icon
+
 ## 1.3.0, February 27, 2017
 
 * Added: Error handling for update checks
