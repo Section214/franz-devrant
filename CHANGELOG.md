@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2, February 28, 2017
+
+* Fixed: About dialog on notification list view
+
 ## 1.3.1, February 28, 2017
 
 * Added: Dynamic update icon
