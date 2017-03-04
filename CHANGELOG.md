@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.3, February 28, 2017
+## 1.3.3, March 4, 2017
 
 * Updated: Plugin ownership and URLs
 * Fixed: Embedded links opening in Franz
