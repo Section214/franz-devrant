@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4, March 13, 2017
+
+* Fixed: Clear notification functionality
+
 ## 1.3.3, March 4, 2017
 
 * Updated: Plugin ownership and URLs

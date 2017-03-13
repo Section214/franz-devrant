@@ -42,6 +42,10 @@
     margin-left: calc(50% - 150px) !important;
 }
 
+.profile-bar.notif-bar {
+    margin-left: -15px;
+}
+
 /** Icon **/
 .franz-icon {
     position: relative;
