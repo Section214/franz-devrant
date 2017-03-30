@@ -261,3 +261,21 @@
         transform: scale(1.0);
     }
 }
+
+.franz-about-settings {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.franz-about-settings form {
+    display: inline-block;
+}
+
+.franz-about-settings input {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.franz-about-settings label {
+    cursor: pointer;
+}

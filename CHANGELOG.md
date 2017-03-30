@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.5, March 30, 2017
+
+* Added: Option to hide non-rants
+* Added: Link to my original announcement rant in about dialog
+
 ## 1.3.4, March 13, 2017
 
 * Fixed: Clear notification functionality
